@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:rich="http://richfaces.org/rich"
+   xmlns:a4j="http://richfaces.org/a4j"
+   template="/WEB-INF/templates/default.xhtml">
+   <ui:define name="content">
+      		
+		<h:form>
+			<div style="float: left;">
+				<rich:panelMenu style="width:142px;" itemMode="server" groupMode="ajax" groupExpandedLeftIcon="triangleUp"
+	                groupCollapsedLeftIcon="triangleDown" topGroupExpandedRightIcon="chevronUp"
+	                topGroupCollapsedRightIcon="chevronDown" itemLeftIcon="disc">
+	                <rich:panelMenuGroup label="Physics">
+						<rich:panelMenuGroup label="1st Year Book">
+							<rich:panelMenuItem label="Chapter 1" />
+	                        <rich:panelMenuItem label="Chapter 2" />
+	                        <rich:panelMenuItem label="Chapter 3" />              
+	                    </rich:panelMenuGroup>
+						<rich:panelMenuGroup label="2nd Year Book">
+							<rich:panelMenuItem label="Chapter 11" name="biek2yPhyCh11">
+								<a4j:param value="/Physics/SY/Ch11/phySYCh11.xhtml" 
+									assignTo="#{biek.visitorPanelMenuSelection}"/>									
+							</rich:panelMenuItem>
+	                        <rich:panelMenuItem label="Chapter 12" />
+	                        <rich:panelMenuItem label="Chapter 13" />
+	                    </rich:panelMenuGroup>
+	                    <rich:panelMenuGroup label="1st Year Praticals">
+							<rich:panelMenuItem label="Practical 1"/>
+	                        <rich:panelMenuItem label="Practical 2" />
+	                        <rich:panelMenuItem label="Practical 3" />
+	                    </rich:panelMenuGroup>
+	                    <rich:panelMenuGroup label="2nd Year Praticals">
+							<rich:panelMenuItem label="Practical 1"/>
+	                        <rich:panelMenuItem label="Practical 2" />
+	                        <rich:panelMenuItem label="Practical 3" />
+	                    </rich:panelMenuGroup>
+	                </rich:panelMenuGroup>
+	                <rich:panelMenuGroup label="Mathematics">
+	                    <rich:panelMenuItem label="1st Year" />
+	                    <rich:panelMenuItem label="2nd Year" />
+	                </rich:panelMenuGroup>
+	            </rich:panelMenu>
+			</div>
+		</h:form>
+		<div style="float: right; width: 806px;" id="selectionContent">
+			<ui:include src="#{biek.visitorPanelMenuSelection}"/>
+		</div>
+   </ui:define>
+</ui:composition>

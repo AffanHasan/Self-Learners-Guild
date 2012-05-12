@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+   xmlns:ui="http://java.sun.com/jsf/facelets"
+   xmlns:f="http://java.sun.com/jsf/core"
+   xmlns:h="http://java.sun.com/jsf/html"
+   xmlns:rich="http://richfaces.org/rich"
+   xmlns:a4j="http://richfaces.org/a4j">
+   <h:form>
+	   <rich:tabPanel switchType="server" activeItem="Notes">
+		   <rich:tab header="Notes" name="Notes">
+		   	<ui:include src="/Physics/SY/Ch11/Ch11DefinitionsAndNotes/Ch11DefinitionsAndNotes.xhtml" />
+		   </rich:tab>
+		   <rich:tab header="Numericals" name="Numericals">
+		   	<ui:include src="/Physics/SY/Ch11/Ch11Examples/phySYCh11Examples.xhtml"/>
+		   </rich:tab>
+		   <rich:tab header="MCQ/Blanks/Short Reasoning">
+		   </rich:tab>
+		   <rich:tab header="Exams">
+		   </rich:tab>
+		   <rich:tab header="Formulae">
+		   </rich:tab>
+	   </rich:tabPanel>
+   </h:form>
+</ui:composition>

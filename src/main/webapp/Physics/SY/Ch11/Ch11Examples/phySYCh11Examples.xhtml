@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:rich="http://richfaces.org/rich"
+	xmlns:a4j="http://richfaces.org/a4j">
+	<h:outputStylesheet>
+       .tooltip {
+        background-color: #{ richSkin.generalBackgroundColor};
+        border-width:3px;
+        }
+       .answer{
+       		border: thin solid orange;
+       }
+        h1 {
+            font-family: Century Schoolbook L;
+    		font-size: 13px;
+    		text-align: center;
+        }
+        div.general {
+        	font-family: Century Schoolbook L;
+        	font-style: italic;
+        	font-size: 15px;
+        	border: none;
+        }
+        h3.numericalHeadings {
+        	font-family: Century Schoolbook L;
+        	<!-- font-size: 16px; -->
+		<!-- text-decoration:underline; -->
+		<!-- text-decoration:bold; -->
+		<!-- font-weight: bold; -->
+        }        
+        .collapsablePanelHead {
+        height: -1px;
+        text-align: left;
+        width: 100%;
+        font-size: small;
+        font-weight: lighter;
+        color: mediumslateBlue;
+		onclick:document.getElementById(this.id+'_header').style.width='100px';
+        background: none;
+        border: none;
+        }     
+        .rf-p-b {
+		font-size: 11px;
+		color: #000000;
+		font-family: Arial, Verdana, sans-serif ;
+		padding: 3px;
+		}
+		.highLightText{
+		background-color: yellow;
+		}
+		.informationSource{
+		font-style: normal; 
+		color: blue; 
+		font-size: 19px;
+		}
+    </h:outputStylesheet>
+	<p  style="font-size: 70px; text-align: center; padding: 0px;">
+		﷽
+	</p>
+	<h1>
+		BIEK 2<SUP>nd</SUP> Year Physics Chapter 11 Heat - Numerical Questions
+		<a4j:commandButton value="Open All" execute="@this">
+			<a4j:param value="ExamplesCh11OpenAll"
+				assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+		</a4j:commandButton>
+		<a4j:commandButton value="Reset All" execute="@this"
+			action="#{biekSYPhysicsChEleven.postConstructionInitiallize}">
+		</a4j:commandButton>
+	</h1>
+
+	<!-- EXAMPLE 11.1 BEGINS-->
+	<div class="general" id="example11.1">
+		<h3 class="numericalHeadings">Example 11.1</h3>
+		A steel rod has a length of 10m at a temperature of 25°C. What will be
+		the increase in length if the temperature is raised to 35°C ? Given ⍺
+		= 1.1 × 10<sup>−5</sup>K<sup>−1</sup> <br />
+		<h:form>
+			<a4j:outputPanel ajaxRendered="true" id="Ex11-1Content">
+				<!-- STEPS BEGINS -->
+				<rich:panel id="Ex11-1Steps" styleClass="general"
+					bodyClass="general"
+					rendered="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Solve' 
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Full' 
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+					or biekSYPhysicsChEleven.examples.solvedEx11_1}">
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 1
+			   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_1}">
+						<h3 class="numericalHeadings">Available Data</h3>		  			
+						(Initial length of the steel rod) L = 10m<br />
+				   		(Change in temperature) 𝚫T = 35°C − 25°C = 10°C = 10K<br/> 
+				   		(co-efficient of linear expansion)⍺ = 1.1 ✕ 10<sup>−5</sup>K<sup>−1</sup>
+						<br />
+						<h3 class="numericalHeadings">The Solution</h3>
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 2 
+			   		or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Full'
+					or biekSYPhysicsChEleven.examples.solvedEx11_1}">
+			   			Since we know that:<sup class="informationSource">   ✫</sup>
+						<br />
+						<span class="highLightText">𝚫L = ⍺ L 𝚫T</span>
+						<rich:tooltip styleClass="tooltip" layout="block">
+							<span style="white-space: nowrap"> 
+								<strong>𝚫: </strong>Pronounced as 'delta' it denotes; The change in some quantity<br />
+								<strong>𝚫L: </strong> Change in length<br /> 
+								<strong>⍺: </strong> Co-efficient of linear expansion (<i>Change in length per unit length per Kelvin rise in temperature. It's unit is K<sup>-1</sup></i>)<br /> 
+								<strong>𝚫T: </strong> Change in Temperature<br />
+							</span>
+						</rich:tooltip>
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 3 
+			   		or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Full'
+					or biekSYPhysicsChEleven.examples.solvedEx11_1}">
+						Therefore Change in the length of the steel rod can be calculated as:
+						<br />𝚫L = ⍺ L 𝚫T
+			   			<br />𝚫L = (10m)(1.1 ✕ 10<sup>−5</sup>K<sup>−1</sup> ✕ 10K)<br />
+						<span class="answer">(Change in length) 𝚫L = 1.1 ✕ 10<sup>−3</sup>m
+						</span>
+					</rich:panel>
+				</rich:panel>
+				<!-- STEPS ENDS -->
+				<a4j:commandButton
+					value="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Solve' ?  biekSYPhysicsChEleven.stepNumber + 1  : 'Solve'}"
+					execute="@this" id="Ex11-1Solve"
+					disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Full'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+						or (biekSYPhysicsChEleven.stepNumber == 3 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Solve')
+						or biekSYPhysicsChEleven.examples.solvedEx11_1}">
+					<a4j:param value="Ex11.1Solve"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+					<a4j:param
+						value="#{(biekSYPhysicsChEleven.stepNumber == null or biekSYPhysicsChEleven.visitorNumericalSelection != 'Ex11.1Solve') ? 0 : biekSYPhysicsChEleven.stepNumber + 1 }"
+						assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+					<a4j:param
+						value="#{(biekSYPhysicsChEleven.stepNumber + 1 == 3 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Solve') ? true : false}"
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_1}" />
+				</a4j:commandButton>
+				<a4j:commandButton value="Full Solution" execute="@this"
+					render="@this, Ex11-1Solve"
+					disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Full'
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+					or (biekSYPhysicsChEleven.stepNumber == 3 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.1Solve')
+					or biekSYPhysicsChEleven.examples.solvedEx11_1}">
+					<a4j:param value="Ex11.1Full"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+					<a4j:param value='true'
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_1}" />
+				</a4j:commandButton>
+				<a4j:commandButton value="Reset Example 11.1"
+					rendered="#{biekSYPhysicsChEleven.examples.solvedEx11_1 and biekSYPhysicsChEleven.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
+					execute="@this" render="Ex11-1Content">
+					<a4j:param value="false"
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_1}" />
+					<a4j:param value="-1"
+						assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+					<a4j:param value="null"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+				</a4j:commandButton>
+			</a4j:outputPanel>
+		</h:form>
+	</div>
+	<!-- EXAMPLE 11.1 ENDS-->
+	<hr />
+	<!-- EXAMPLE 11.2 BEGINS-->
+	<div class="general" id="example11.2">
+		<h3 class="numericalHeadings">Example 11.2</h3>
+		An air-storage tank whose volume is 112 liters contains 3kg of air at
+		a pressure of 18 atmospheres. How much air would have to be forced
+		into the tank to increase the pressure to 21 atmospheres assuming no
+		change in temperature.
+		<h:form>
+			<a4j:outputPanel ajaxRendered="true" id="Ex11-2Content">
+				<!-- STEPS BEGINS -->
+				<rich:panel id="Ex11-2Steps" styleClass="general"
+					bodyClass="general"
+					rendered="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Solve' 
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full' 
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+					or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 1 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+
+						<h3 class="numericalHeadings">Available Data</h3>
+
+			  				(initial pressure) P1 = 18 atm
+			  				<br />(Required pressure) P2 = 21 atm
+			  				<br />(Initial volume) V1 = 112 liters
+			  				<br />Final volume V2 = ?
+			  				<br />(Initial mass of air in the air-storage tank) m1 = 3kg
+			  				<br />(Mass of air required to increase the pressure of air-storage tank to 21 atm) m2 = ?
+			  				<br />
+						<span>Note: There is no change in temperature</span>
+						<h3 class="numericalHeadings">The Solution</h3>
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 2 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+			   			Since we know that:<br />
+						<span class="highLightText">P<sub>1</sub>V<sub>1</sub> ÷ m<sub>1</sub> = P<sub>2</sub>V<sub>2</sub> ÷ m<sub>2</sub></span><br/>
+						<img class="highLightText"
+							src="Physics/SY/Ch11/Ch11Examples/Ch11Ex11.2S2.gif" />
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 3 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+			   			From equation above:<br />
+			   			(18 ✕ 112) ÷ 3 = (21 ✕ 112) ÷ m<sub>2</sub><br/>
+						<img src="Physics/SY/Ch11/Ch11Examples/Ch11Ex11.2S3.gif" />
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 4 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+						OR we can say that:
+						<br />m<sub>2</sub> = 3.5 kg
+			   		</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 5 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+		   				Hence the mass of air which must be forced into the tank is:
+						<br />
+						<span class="answer">3.50 - 3.00 = 0.5kg</span>
+					</rich:panel>
+				</rich:panel>
+				<!-- STEPS ENDS -->
+				<a4j:commandButton
+					value="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Solve' ?  biekSYPhysicsChEleven.stepNumber + 1  : 'Solve'}"
+					execute="@this" id="Ex11-2Solve"
+					disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+						or (biekSYPhysicsChEleven.stepNumber == 5 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Solve')
+						or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+					<a4j:param value="Ex11.2Solve"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+					<a4j:param
+						value="#{(biekSYPhysicsChEleven.stepNumber == null or biekSYPhysicsChEleven.visitorNumericalSelection != 'Ex11.2Solve') ? 0 : biekSYPhysicsChEleven.stepNumber + 1 }"
+						assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+					<a4j:param
+						value="#{(biekSYPhysicsChEleven.stepNumber + 1 == 5 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Solve') ? true : false}"
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_2}" />
+				</a4j:commandButton>
+				<a4j:commandButton value="Full Solution" execute="@this"
+					render="@this, Ex11-2Solve"
+					disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Full'
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+					or (biekSYPhysicsChEleven.stepNumber == 5 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.2Solve')
+					or biekSYPhysicsChEleven.examples.solvedEx11_2}">
+					<a4j:param value="Ex11.2Full"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+					<a4j:param value='true'
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_2}" />
+				</a4j:commandButton>
+				<a4j:commandButton value="Reset Example 11.2"
+					rendered="#{biekSYPhysicsChEleven.examples.solvedEx11_2 and biekSYPhysicsChEleven.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
+					execute="@this" render="Ex11-2Content">
+					<a4j:param value="false"
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_2}" />
+					<a4j:param value="-1"
+						assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+					<a4j:param value="null"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+				</a4j:commandButton>
+			</a4j:outputPanel>
+		</h:form>
+	</div>
+	<!-- EXAMPLE 11.2 ENDS-->
+	<hr />
+	<!-- EXAMPLE 11.3 BEGINS-->
+	<div class="general" id="example11.3">
+		<h3 class="numericalHeadings">Example 11.3</h3>
+		Calculate the volume occupied by a gram-mole of a gas at 0°C and at a
+		pressure of 1 atmosphere.
+		<h:form>
+			<a4j:outputPanel ajaxRendered="true" id="Ex11-3Content">
+				<!-- STEPS BEGINS -->
+				<rich:panel id="Ex11-3Steps" styleClass="general"
+					bodyClass="general"
+					rendered="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Solve' 
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full' 
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+					or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 1 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+						<h3 class="numericalHeadings">Available Data</h3>
+			  			(Given Pressure) P = 1 atm = 1.01 × 10<sup>5</sup> Nm<sup>−2</sup>
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 2 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+						Temperature T = 0°C + 273 = 273 K<sup class="informationSource">   ✫</sup>
+						<rich:tooltip styleClass="tooltip" layout="block">
+							<span style="white-space: nowrap">
+								<strong>Remember: </strong> While working with Gases it is good to convert the temperature from °C to Kelvin
+							</span>
+						</rich:tooltip>						
+					</rich:panel>
+				   	<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 3 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+						n = 1 (Number of moles)
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 4 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+			  			R = 8.314 J / mole.K
+		  			<sup class="informationSource">   ✫</sup>
+		  			<rich:tooltip mode="client">
+						<ui:include src="/Physics/SY/Ch11/Ch11DefinitionsAndNotes/UniversalGasConstant.xhtml"/>
+					</rich:tooltip>
+						 <!--
+			  			<h:commandLink>
+			  				<rich:componentControl target="popup" operation="show" />
+						</h:commandLink>
+						 <rich:popupPanel id="popup" modal="false" autosized="false" resizeable="true">
+							<f:facet name="header">
+								Universal Gas Constant
+							</f:facet>
+							<f:facet name="controls">
+								<h:outputLink value="#"
+									onclick="#{rich:component('popup')}.hide(); return false;">
+					                X
+					            </h:outputLink>
+							</f:facet>
+							<ui:include src="/Physics/SY/Ch11/Ch11DefinitionsAndNotes/UniversalGasConstant.xhtml"/>
+						</rich:popupPanel> 
+						  -->
+							  			
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 5 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+				   		<h3 class="numericalHeadings">The Solution</h3>
+				   		We know that:
+				   		<br /><span class="highLightText">PV = n R T</span>
+			   		</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 6 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+				   		From equation above:
+				   		<br />1.01 × 10<sup>5</sup> V = 1 × 8.31 × 273
+			   		</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 7 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+				   		V = 1 × 8.314 × 273 / 1.01 × 10<sup>5</sup>
+					</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 8 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+				   		V  = 0.0224 m<sup>3</sup> / mole
+			   		</rich:panel>
+					<rich:panel styleClass="general" bodyClass="general"
+						rendered="#{biekSYPhysicsChEleven.stepNumber >= 9 or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+						or biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+						or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+						<span class="answer"> V = 22.4 liters / mole as 1m<sup>3</sup>
+							= 1 × 10<sup>3</sup> liters
+						</span>
+					</rich:panel>
+				</rich:panel>
+				<!-- STEPS ENDS -->
+				<a4j:commandButton
+					value="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Solve' ?  biekSYPhysicsChEleven.stepNumber + 1  : 'Solve'}"
+					execute="@this" id="Ex11-3Solve"
+					disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+					or (biekSYPhysicsChEleven.stepNumber == 9 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Solve')
+					or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+					<a4j:param value="Ex11.3Solve"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+					<a4j:param
+						value="#{(biekSYPhysicsChEleven.stepNumber == null or biekSYPhysicsChEleven.visitorNumericalSelection != 'Ex11.3Solve') ? 0 : biekSYPhysicsChEleven.stepNumber + 1 }"
+						assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+					<a4j:param
+						value="#{(biekSYPhysicsChEleven.stepNumber + 1 == 9 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Solve') ? true : false}"
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_3}" />
+				</a4j:commandButton>
+				<a4j:commandButton value="Full Solution" execute="@this"
+					render="@this, Ex11-3Solve"
+					disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Full'
+					or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+					or (biekSYPhysicsChEleven.stepNumber == 9 and biekSYPhysicsChEleven.visitorNumericalSelection == 'Ex11.3Solve')
+					or biekSYPhysicsChEleven.examples.solvedEx11_3}">
+					<a4j:param value="Ex11.3Full"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+					<a4j:param value='true'
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_3}" />
+				</a4j:commandButton>
+				<a4j:commandButton value="Reset Example 11.3"
+					rendered="#{biekSYPhysicsChEleven.examples.solvedEx11_3 and biekSYPhysicsChEleven.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
+					execute="@this" render="Ex11-3Content">
+					<a4j:param value="false"
+						assignTo="#{biekSYPhysicsChEleven.examples.solvedEx11_3}" />
+					<a4j:param value="-1"
+						assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+					<a4j:param value="null"
+						assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+				</a4j:commandButton>
+			</a4j:outputPanel>
+		</h:form>
+	</div>
+	<!-- EXAMPLE 11.3 ENDS-->
+</ui:composition>
