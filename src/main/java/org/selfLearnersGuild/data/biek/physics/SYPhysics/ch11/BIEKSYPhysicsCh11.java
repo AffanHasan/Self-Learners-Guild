@@ -19,12 +19,14 @@ public class BIEKSYPhysicsCh11 implements Serializable {
 	private Integer stepNumber;
 	private String visitorNumericalSelection;
 	private BIEKSYPhysicsCh11.Examples examples;
+	private BIEKSYPhysicsCh11.Exercise exercise;
 
 	@PostConstruct
 	public void postConstructionInitiallize() {
 		this.stepNumber = null;
 		this.visitorNumericalSelection = null;
 		this.examples = new BIEKSYPhysicsCh11.Examples();
+		this.exercise = new BIEKSYPhysicsCh11.Exercise();
 	}
 
 	/**
@@ -37,32 +39,60 @@ public class BIEKSYPhysicsCh11 implements Serializable {
 	 */
 	public class Examples {
 
-		private boolean solvedEx11_1;
-		private boolean solvedEx11_2;
-		private boolean solvedEx11_3;
-
-		public boolean isSolvedEx11_1() {
-			return solvedEx11_1;
+		private boolean solvedExample11_1;
+		private boolean solvedExample11_2;
+		private boolean solvedExample11_3;
+		
+		public boolean isSolvedExample11_1() {
+			return solvedExample11_1;
 		}
-
-		public void setSolvedEx11_1(boolean solvedEx11_1) {
-			this.solvedEx11_1 = solvedEx11_1;
+		public void setSolvedExample11_1(boolean solvedExample11_1) {
+			this.solvedExample11_1 = solvedExample11_1;
 		}
-
-		public boolean isSolvedEx11_2() {
-			return solvedEx11_2;
+		public boolean isSolvedExample11_2() {
+			return solvedExample11_2;
 		}
-
-		public void setSolvedEx11_2(boolean solvedEx11_2) {
-			this.solvedEx11_2 = solvedEx11_2;
+		public void setSolvedExample11_2(boolean solvedExample11_2) {
+			this.solvedExample11_2 = solvedExample11_2;
 		}
-
-		public boolean isSolvedEx11_3() {
-			return solvedEx11_3;
+		public boolean isSolvedExample11_3() {
+			return solvedExample11_3;
 		}
-
-		public void setSolvedEx11_3(boolean solvedEx11_3) {
-			this.solvedEx11_3 = solvedEx11_3;
+		public void setSolvedExample11_3(boolean solvedExample11_3) {
+			this.solvedExample11_3 = solvedExample11_3;
+		}
+	}
+	
+	/**
+	 * <p>
+	 * Till now the Main purpose of this inner class is only to hold the
+	 * 'solved' state of a numerical.
+	 * </p>
+	 * 
+	 * @author Affan Hasan
+	 */
+	public class  Exercise {
+		private boolean solvedProblem11_1;
+		private boolean solvedProblem11_2;
+		private boolean solvedProblem11_3;
+		
+		public boolean isSolvedProblem11_1() {
+			return solvedProblem11_1;
+		}
+		public void setSolvedProblem11_1(boolean solvedProblem11_1) {
+			this.solvedProblem11_1 = solvedProblem11_1;
+		}
+		public boolean isSolvedProblem11_2() {
+			return solvedProblem11_2;
+		}
+		public void setSolvedProblem11_2(boolean solvedProblem11_2) {
+			this.solvedProblem11_2 = solvedProblem11_2;
+		}
+		public boolean isSolvedProblem11_3() {
+			return solvedProblem11_3;
+		}
+		public void setSolvedProblem11_3(boolean solvedProblem11_3) {
+			this.solvedProblem11_3 = solvedProblem11_3;
 		}
 	}
 
@@ -95,5 +125,16 @@ public class BIEKSYPhysicsCh11 implements Serializable {
 			this.examples = new BIEKSYPhysicsCh11.Examples();
 		else
 			this.examples = examples;
+	}
+
+	public BIEKSYPhysicsCh11.Exercise getExercise() {
+		return exercise;
+	}
+
+	public void setExercise(BIEKSYPhysicsCh11.Exercise exercise) {
+		if(exercise == null)
+			this.exercise = null;
+		else
+			this.exercise = exercise;
 	}
 }
