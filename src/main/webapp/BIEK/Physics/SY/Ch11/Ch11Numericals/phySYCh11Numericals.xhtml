@@ -77,13 +77,6 @@
 	</p>
 	<h1>
 		BIEK 2<SUP>nd</SUP> Year Physics Chapter 11 Heat - Numerical Questions
-		<a4j:commandButton value="Open All" execute="@this">
-			<a4j:param value="ExamplesCh11OpenAll"
-				assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
-		</a4j:commandButton>
-		<a4j:commandButton value="Reset All" execute="@this"
-			action="#{biekSYPhysicsChEleven.postConstructionInitiallize}">
-		</a4j:commandButton>
 	</h1>
 	<fieldset>
 		<legend>Topics</legend>
@@ -108,15 +101,15 @@
 					<!-- STEPS BEGINS -->
 					<rich:panel id="biekSYPhyCh11Example11_1Steps" styleClass="general"
 						bodyClass="general"
-						rendered="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve' 
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-								or biekSYPhysicsChEleven.examples.solvedExample11_1}">
+						rendered="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve' 
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+								or biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}">
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 1
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
-									or biekSYPhysicsChEleven.examples.solvedExample11_1}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 1
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
+									or biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}">
 							<h3 class="numericalHeadings">Available Data</h3>		  			
 									(Initial length of the steel rod) L = 10m<br />
 							   		(Change in temperature) 𝚫T = 35°C − 25°C = 10°C = 10K<br /> 
@@ -125,10 +118,10 @@
 							<h3 class="numericalHeadings">The Solution</h3>
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 2 
-						   		or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
-								or biekSYPhysicsChEleven.examples.solvedExample11_1}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 2 
+						   		or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
+								or biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}">
 						   			Since we know that:<sup class="informationSource"> ✫</sup>
 							<br />
 							<span class="highLightText">𝚫L = ⍺ L 𝚫T</span>
@@ -143,10 +136,10 @@
 							</rich:tooltip>
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 3 
-						   		or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
-								or biekSYPhysicsChEleven.examples.solvedExample11_1}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 3 
+						   		or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
+								or biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}">
 									Therefore Change in the length of the steel rod can be calculated as:
 									<br />𝚫L = ⍺ L 𝚫T
 						   			<br />𝚫L = (10m)(1.1 ✕ 10<sup>−5</sup>K<sup>−1</sup> ✕ 10K)<br />
@@ -156,41 +149,41 @@
 					</rich:panel>
 					<!-- STEPS ENDS -->
 					<a4j:commandButton
-						value="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve' ?  biekSYPhysicsChEleven.stepNumber + 1  : 'Solve'}"
+						value="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve' ?  biekSYPhysicsChElevenNumericals.stepNumber + 1  : 'Solve'}"
 						execute="@this" id="biekSYPhyCh11Example11_1Solve" render="biekSYPhyCh11Example11_1Content"
-						disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
-									or (biekSYPhysicsChEleven.stepNumber == 3 and biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve')
-									or biekSYPhysicsChEleven.examples.solvedExample11_1}">
+						disabled="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+									or (biekSYPhysicsChElevenNumericals.stepNumber == 3 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve')
+									or biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}">
 						<a4j:param value="biekSYPhyCh11Example11_1Solve"
-							assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection}" />
 						<a4j:param
-							value="#{(biekSYPhysicsChEleven.stepNumber == null or biekSYPhysicsChEleven.visitorNumericalSelection != 'biekSYPhyCh11Example11_1Solve') ? 0 : biekSYPhysicsChEleven.stepNumber + 1 }"
-							assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+							value="#{(biekSYPhysicsChElevenNumericals.stepNumber == null or biekSYPhysicsChElevenNumericals.visitorNumericalSelection != 'biekSYPhyCh11Example11_1Solve') ? 0 : biekSYPhysicsChElevenNumericals.stepNumber + 1 }"
+							assignTo="#{biekSYPhysicsChElevenNumericals.stepNumber}" />
 						<a4j:param
-							value="#{(biekSYPhysicsChEleven.stepNumber + 1 == 3 and biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve') ? true : false}"
-							assignTo="#{biekSYPhysicsChEleven.examples.solvedExample11_1}" />
+							value="#{(biekSYPhysicsChElevenNumericals.stepNumber + 1 == 3 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve') ? true : false}"
+							assignTo="#{biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}" />
 					</a4j:commandButton>
 					<a4j:commandButton value="Full Solution" execute="@this"
 						render="@this, biekSYPhyCh11Example11_1Content, biekSYPhyCh11Example11_1Solve"
-						disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
-								or (biekSYPhysicsChEleven.stepNumber == 3 and biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve')
-								or biekSYPhysicsChEleven.examples.solvedExample11_1}">
-						<a4j:param value="biekSYPhysicsChEleven.examples.solvedExample11_1"
-							assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+						disabled="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Full'
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+								or (biekSYPhysicsChElevenNumericals.stepNumber == 3 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Example11_1Solve')
+								or biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}">
+						<a4j:param value="biekSYPhysicsChElevenNumericals.examples.solvedExample11_1"
+							assignTo="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection}" />
 						<a4j:param value='true'
-							assignTo="#{biekSYPhysicsChEleven.examples.solvedExample11_1}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}" />
 					</a4j:commandButton>
 					<a4j:commandButton value="Reset Example 11.1"
-						rendered="#{biekSYPhysicsChEleven.examples.solvedExample11_1 and biekSYPhysicsChEleven.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
+						rendered="#{biekSYPhysicsChElevenNumericals.examples.solvedExample11_1 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
 						execute="@this" render="biekSYPhyCh11Example11_1Content">
 						<a4j:param value="false"
-							assignTo="#{biekSYPhysicsChEleven.examples.solvedExample11_1}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.examples.solvedExample11_1}" />
 						<a4j:param value="-1"
-							assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.stepNumber}" />
 						<a4j:param value="null"
-							assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection}" />
 					</a4j:commandButton>
 				</a4j:outputPanel>
 			</h:form>
@@ -211,15 +204,15 @@
 					<!-- STEPS BEGINS -->
 					<rich:panel id="biekSYPhyCh11Exercise11_2Steps"
 						styleClass="general" bodyClass="general"
-						rendered="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve' 
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full' 
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-								or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+						rendered="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve' 
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full' 
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+								or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 1
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 1
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 									<h3 class="numericalHeadings">Available Data</h3>
 									Initial length of the steel rod L<sub>initial</sub> = 0.2cm
 									<br/>We have to find out length of the steel rod at 60°C L<sub>final</sub> = ?
@@ -228,26 +221,26 @@
 									<br/>Change in temperature of steel rod 𝚫T = 60°C − 30° = 30°C
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 2
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 2
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 									(co-efficient of linear expansion) 𝛂 for steel = 1.1 × 10<sup>−6</sup>
-									<span class="informationSource">✫</span>
+									<sup><span class="informationSource">✫</span></sup>
 									<rich:tooltip mode="ajax">
 										Value of <strong>𝛂</strong> for steel is taken from <strong>table 11.1</strong> of the text book
 										<br/>In examination it will be given to you (<strong><i>there is no need to remember it</i></strong>)
 									</rich:tooltip>
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 3
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 3
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 									<h3 class="numericalHeadings">The Solution</h3>
 									Linear thermal expansion in solids can be calculated by using following formula:
 									<br/><span class="highLightText">𝚫L = 𝛂  L<sub>initial</sub> 𝚫T</span>
-									<span class="informationSource">✫</span>
+									<sup><span class="informationSource">✫</span></sup>
 									<rich:tooltip mode="ajax">
 										<strong>L<sub>initial</sub>: </strong> initial length
 										<br/><strong>𝚫: </strong>Pronounced as 'delta' it denotes; The change in some quantity
@@ -257,70 +250,70 @@
 									</rich:tooltip>
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 4
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 4
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 									After putting values in the formula above, we get:
 									<br/>𝚫L = (1.1 × 10<sup>−6</sup>) × (0.2) × (30)
 									<br/>𝚫L = 0.0000066cm (<i>this is the change in length of the steel rod</i>)
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 5
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 5
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 									So, final length of the steel rod at 60°C will be:
 									<br/>L<sub>final</sub> = L<sub>initial</sub> + 𝚫L
 									<br/>L<sub>final</sub> = 0.2cm + 0.0000066cm
 									<br/>L<sub>final</sub> = 0.2000066cm
 						</rich:panel>
 						<rich:panel styleClass="general" bodyClass="general"
-							rendered="#{biekSYPhysicsChEleven.stepNumber >= 6
-						   			or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+							rendered="#{biekSYPhysicsChElevenNumericals.stepNumber >= 6
+						   			or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 									<span class="answer">Length of the steel rod at 60°C is: <strong>0.2000066cm</strong></span>									
 						</rich:panel>
 					</rich:panel>
 					<!-- STEPS ENDS -->
 					<a4j:commandButton
-						value="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve' ?  biekSYPhysicsChEleven.stepNumber + 1  : 'Solve'}"
+						value="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve' ?  biekSYPhysicsChElevenNumericals.stepNumber + 1  : 'Solve'}"
 						execute="@this" render="biekSYPhyCh11Exercise11_2Content"
 						id="biekSYPhyCh11Exercise11_2Solve"
-						disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-									or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
-									or (biekSYPhysicsChEleven.stepNumber == 6 and biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve')
-									or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+						disabled="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+									or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+									or (biekSYPhysicsChElevenNumericals.stepNumber == 6 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve')
+									or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 						<a4j:param value="biekSYPhyCh11Exercise11_2Solve"
-							assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection}" />
 						<a4j:param
-							value="#{(biekSYPhysicsChEleven.stepNumber == null or biekSYPhysicsChEleven.visitorNumericalSelection != 'biekSYPhyCh11Exercise11_2Solve') ? 0 : biekSYPhysicsChEleven.stepNumber + 1 }"
-							assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+							value="#{(biekSYPhysicsChElevenNumericals.stepNumber == null or biekSYPhysicsChElevenNumericals.visitorNumericalSelection != 'biekSYPhyCh11Exercise11_2Solve') ? 0 : biekSYPhysicsChElevenNumericals.stepNumber + 1 }"
+							assignTo="#{biekSYPhysicsChElevenNumericals.stepNumber}" />
 						<a4j:param
-							value="#{(biekSYPhysicsChEleven.stepNumber + 1 == 6 and biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve') ? true : false}"
-							assignTo="#{biekSYPhysicsChEleven.exercise.solvedProblem11_2}" />
+							value="#{(biekSYPhysicsChElevenNumericals.stepNumber + 1 == 6 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve') ? true : false}"
+							assignTo="#{biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}" />
 					</a4j:commandButton>
 					<a4j:commandButton value="Full Solution" execute="@this"
 						render="@this, biekSYPhyCh11Exercise11_2Content, biekSYPhyCh11Exercise11_2Solve"
-						disabled="#{biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
-								or biekSYPhysicsChEleven.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
-								or (biekSYPhysicsChEleven.stepNumber == 6 and biekSYPhysicsChEleven.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve')
-								or biekSYPhysicsChEleven.exercise.solvedProblem11_2}">
+						disabled="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Full'
+								or biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'ExamplesCh11OpenAll' 
+								or (biekSYPhysicsChElevenNumericals.stepNumber == 6 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection == 'biekSYPhyCh11Exercise11_2Solve')
+								or biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}">
 						<a4j:param value="biekSYPhyCh11Exercise11_2Full"
-							assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection}" />
 						<a4j:param value='true'
-							assignTo="#{biekSYPhysicsChEleven.exercise.solvedProblem11_2}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}" />
 					</a4j:commandButton>
 					<a4j:commandButton value="Reset Problem 11.2"
-						rendered="#{biekSYPhysicsChEleven.exercise.solvedProblem11_2 and biekSYPhysicsChEleven.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
+						rendered="#{biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2 and biekSYPhysicsChElevenNumericals.visitorNumericalSelection != 'ExamplesCh11OpenAll'}"
 						execute="@this" render="biekSYPhyCh11Exercise11_2Content">
 						<a4j:param value="false"
-							assignTo="#{biekSYPhysicsChEleven.exercise.solvedProblem11_2}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.exercise.solvedProblem11_2}" />
 						<a4j:param value="-1"
-							assignTo="#{biekSYPhysicsChEleven.stepNumber}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.stepNumber}" />
 						<a4j:param value="null"
-							assignTo="#{biekSYPhysicsChEleven.visitorNumericalSelection}" />
+							assignTo="#{biekSYPhysicsChElevenNumericals.visitorNumericalSelection}" />
 					</a4j:commandButton>
 				</a4j:outputPanel>
 			</h:form>
@@ -332,6 +325,7 @@
 	<rich:collapsiblePanel header="Questions From Examinations"
 		switchType="client" headerClass="collapsablePanelHead" styleClass="collapsablePanelStyleClass"
 		leftCollapsedIcon="none" leftExpandedIcon="none" expanded="false">
+		
 	</rich:collapsiblePanel>
 	<!-- EXAM QUESTIONS BIEK PHY SY CH 11 ENDS -->
 	<!-- PRACTICE QUESTIONS BIEK PHY SY CH 11 LINEAR THERMAL EXPANSION BEGINS -->
